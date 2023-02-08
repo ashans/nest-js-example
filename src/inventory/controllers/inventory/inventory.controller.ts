@@ -52,4 +52,9 @@ export class InventoryController {
 
     return { id: newId };
   }
+
+  @Get('')
+  getAllItems() {
+    return this.inventoryService.getAllItems();
+  }
 }

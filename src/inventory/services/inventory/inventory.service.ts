@@ -38,4 +38,8 @@ export class InventoryService {
 
     return newId;
   }
+
+  getAllItems(): InventoryItem[] {
+    return this.items;
+  }
 }
