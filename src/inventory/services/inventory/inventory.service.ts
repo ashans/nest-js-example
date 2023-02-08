@@ -8,21 +8,19 @@ export class InventoryService {
     {
       id: '1',
       name: 'item1',
+      email: 'email1@g.com',
       description: 'desc1',
     },
     {
       id: '2',
       name: 'item2',
-      description: 'desc2',
-    },
-    {
-      id: '2',
-      name: 'item2',
+      email: 'email2@g.com',
       description: 'desc2',
     },
     {
       id: '3',
       name: 'item3',
+      email: 'email3@g.com',
       description: 'desc3',
     },
   ];

@@ -9,6 +9,8 @@ import {
   Post,
   Req,
   Res,
+  UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { InventoryService } from '../../services/inventory/inventory.service';
 import { Request, Response } from 'express';
@@ -43,9 +45,11 @@ export class InventoryController {
   }
 
   @Post('')
+  @UsePipes(ValidationPipe)
   createItem(@Body() createBody: CreateInventoryItem) {
     const newId = this.inventoryService.createItem({
       name: createBody.name,
+      email: createBody.email,
       description: createBody.description,
       id: '',
     });
