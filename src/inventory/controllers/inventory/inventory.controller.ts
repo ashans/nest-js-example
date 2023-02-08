@@ -1,18 +1,19 @@
 import {
+  Body,
   Controller,
   Get,
   HttpException,
   HttpStatus,
   Param,
   ParseIntPipe,
+  Post,
   Req,
   Res,
 } from '@nestjs/common';
-import {
-  InventoryItem,
-  InventoryService,
-} from '../../services/inventory/inventory.service';
+import { InventoryService } from '../../services/inventory/inventory.service';
 import { Request, Response } from 'express';
+import { CreateInventoryItem } from '../../dtos/CreateInventoryItem.dto';
+import { InventoryItem } from '../../types/InventoryItem';
 
 @Controller('inventory')
 export class InventoryController {
@@ -39,5 +40,16 @@ export class InventoryController {
     } else {
       throw new HttpException('No item found for id', HttpStatus.BAD_REQUEST);
     }
+  }
+
+  @Post('')
+  createItem(@Body() createBody: CreateInventoryItem) {
+    const newId = this.inventoryService.createItem({
+      name: createBody.name,
+      description: createBody.description,
+      id: '',
+    });
+
+    return { id: newId };
   }
 }

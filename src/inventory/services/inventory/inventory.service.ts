@@ -1,10 +1,6 @@
 import { Injectable } from '@nestjs/common';
-
-export interface InventoryItem {
-  id: string;
-  name: string;
-  description: string;
-}
+import { randomStringGenerator } from '@nestjs/common/utils/random-string-generator.util';
+import { InventoryItem } from '../../types/InventoryItem';
 
 @Injectable()
 export class InventoryService {
@@ -33,5 +29,13 @@ export class InventoryService {
 
   getInventoryItem(id: string): InventoryItem {
     return this.items.find((value) => value.id === id);
+  }
+
+  createItem(item: InventoryItem): string {
+    const newId = randomStringGenerator();
+    item.id = newId;
+    this.items.push(item);
+
+    return newId;
   }
 }
