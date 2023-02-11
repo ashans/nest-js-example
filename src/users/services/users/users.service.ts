@@ -4,6 +4,7 @@ import { plainToClass } from 'class-transformer';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User as UserEntity } from './../../../typeorm';
 import { Repository } from 'typeorm';
+import { encodePassword } from 'src/utils/bcrypt';
 
 @Injectable()
 export class UsersService {
@@ -29,7 +30,8 @@ export class UsersService {
     };
   }
 
-  createUser(user: User): Promise<UserEntity> {
+  async createUser(user: User): Promise<UserEntity> {
+    user.password = encodePassword(user.password);
     const created = this.userRepository.create(user);
     return this.userRepository.save(created);
   }
