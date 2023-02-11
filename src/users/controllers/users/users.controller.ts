@@ -31,8 +31,8 @@ export class UsersController {
   @Get(':username')
   @UseFilters(HttpExceptionFilter)
   @UseInterceptors(ClassSerializerInterceptor)
-  getByUsername(@Param('username') username: string) {
-    const user = this.userService.getUserByUsername(username);
+  async getByUsername(@Param('username') username: string) {
+    const user = await this.userService.getUserByUsername(username);
     if (user) {
       return new SerializedUser(user);
     }
