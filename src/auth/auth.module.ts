@@ -10,10 +10,7 @@ import { SessionSerializer } from './utils/SessionSerializer';
 
 @Module({
   controllers: [AuthController],
-  imports: [
-    TypeOrmModule.forFeature([User]),
-    PassportModule.register({ session: true }),
-  ],
+  imports: [TypeOrmModule.forFeature([User])],
   providers: [
     {
       provide: 'AUTH_SERVICE',

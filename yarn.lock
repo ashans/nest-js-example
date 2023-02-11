@@ -1402,6 +1402,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/debug@npm:0.0.31":
+  version: 0.0.31
+  resolution: "@types/debug@npm:0.0.31"
+  checksum: d3f2cfa083f0f71015874f4a3e338deb3acbd80fc52c2b4c4eb21e2f28a0f5f5184d0861c8ec2b83e7c1e4db01fc2ec96646ae14fa7028f6da5acdf948b72fcb
+  languageName: node
+  linkType: hard
+
 "@types/eslint-scope@npm:^3.7.3":
   version: 3.7.4
   resolution: "@types/eslint-scope@npm:3.7.4"
@@ -1447,7 +1454,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express-session@npm:^1.17.5":
+"@types/express-session@npm:^1.15.5, @types/express-session@npm:^1.17.5":
   version: 1.17.5
   resolution: "@types/express-session@npm:1.17.5"
   dependencies:
@@ -2854,6 +2861,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"connect-typeorm@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "connect-typeorm@npm:2.0.0"
+  dependencies:
+    "@types/debug": 0.0.31
+    "@types/express-session": ^1.15.5
+    debug: ^4.1.1
+    express-session: ^1.15.6
+  peerDependencies:
+    typeorm: ^0.3.0
+  checksum: 48889a1b2c6031f7f643e92ecb9fcee9b2e20d4b6b4f98470ee66111a13caa4de93e5b17e9161f218026ba8d458a344088b8ebff2506eda3a0d3401541307b6b
+  languageName: node
+  linkType: hard
+
 "consola@npm:^2.15.0":
   version: 2.15.3
   resolution: "consola@npm:2.15.3"
@@ -3513,7 +3534,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express-session@npm:^1.17.3":
+"express-session@npm:^1.15.6, express-session@npm:^1.17.3":
   version: 1.17.3
   resolution: "express-session@npm:1.17.3"
   dependencies:
@@ -5615,13 +5636,14 @@ __metadata:
     bcrypt: ^5.1.0
     class-transformer: ^0.5.1
     class-validator: ^0.14.0
+    connect-typeorm: ^2.0.0
     eslint: ^8.0.1
     eslint-config-prettier: ^8.3.0
     eslint-plugin-prettier: ^4.0.0
     express-session: ^1.17.3
     jest: 29.3.1
     mysql2: ^3.1.2
-    passport: ^0.6.0
+    passport: ^0.4.0
     passport-local: ^1.0.0
     prettier: ^2.3.2
     reflect-metadata: ^0.1.13
@@ -5987,14 +6009,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"passport@npm:^0.6.0":
-  version: 0.6.0
-  resolution: "passport@npm:0.6.0"
+"passport@npm:^0.4.0":
+  version: 0.4.1
+  resolution: "passport@npm:0.4.1"
   dependencies:
     passport-strategy: 1.x.x
     pause: 0.0.1
-    utils-merge: ^1.0.1
-  checksum: ef932ad671d50de34765c7a53cd1e058d8331a82a6df09265a9c6c1168911aee4a7b5215803d0101110ab7f317e096b4954ca7e18fb2c33b9929f0bd17dbe159
+  checksum: 6e0d855e281df8568f4b361d8377995295e59b08391a1b57d18d1404dbaa67af1523c987e9a071d6b0d1550f022637d62f9854bbd31ebc30372f0bfb1acb2567
   languageName: node
   linkType: hard
 
@@ -7435,7 +7456,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"utils-merge@npm:1.0.1, utils-merge@npm:^1.0.1":
+"utils-merge@npm:1.0.1":
   version: 1.0.1
   resolution: "utils-merge@npm:1.0.1"
   checksum: c81095493225ecfc28add49c106ca4f09cdf56bc66731aa8dabc2edbbccb1e1bfe2de6a115e5c6a380d3ea166d1636410b62ef216bb07b3feb1cfde1d95d5080
