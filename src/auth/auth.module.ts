@@ -6,10 +6,14 @@ import { UsersService } from 'src/users/services/users/users.service';
 import { AuthController } from './controller/auth/auth.controller';
 import { AuthService } from './service/auth/auth.service';
 import { LocalStrategy } from './utils/LocalStrategy';
+import { SessionSerializer } from './utils/SessionSerializer';
 
 @Module({
   controllers: [AuthController],
-  imports: [TypeOrmModule.forFeature([User]), PassportModule],
+  imports: [
+    TypeOrmModule.forFeature([User]),
+    PassportModule.register({ session: true }),
+  ],
   providers: [
     {
       provide: 'AUTH_SERVICE',
@@ -20,6 +24,7 @@ import { LocalStrategy } from './utils/LocalStrategy';
       useClass: UsersService,
     },
     LocalStrategy,
+    SessionSerializer,
   ],
 })
 export class AuthModule {}
